@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>StreakFIT – Terms & Conditions</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #2ecc71, #27ae60);
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dialog {
+      background: #ffffff;
+      width: 90%;
+      max-width: 700px;
+      border-radius: 12px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      display: flex;
+      flex-direction: column;
+    }
+
+    .dialog-header {
+      padding: 20px;
+      background: #27ae60;
+      color: white;
+      border-radius: 12px 12px 0 0;
+      text-align: center;
+    }
+
+    .dialog-header h1 {
+      margin: 0;
+      font-size: 22px;
+    }
+
+    .dialog-content {
+      padding: 20px;
+      height: 380px;
+      overflow-y: auto;
+      color: #333;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+
+    .dialog-content h3 {
+      color: #27ae60;
+      margin-top: 20px;
+      font-size: 16px;
+    }
+
+    .dialog-footer {
+      padding: 15px;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid #ddd;
+    }
+
+    .btn {
+      padding: 10px 25px;
+      font-size: 14px;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+    }
+
+    .agree {
+      background: #27ae60;
+      color: white;
+    }
+
+    .disagree {
+      background: #e74c3c;
+      color: white;
+    }
+
+    .btn:hover {
+      opacity: 0.9;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="dialog">
+    <div class="dialog-header">
+      <h1>StreakFIT – Terms & Conditions</h1>
+      <p>Please read carefully before continuing</p>
+    </div>
+
+    <div class="dialog-content">
+
+      <h3>🟢 Data Collection Transparency</h3>
+      We clearly state what data we collect, including activity data, pose data, user inputs, context flags, and usage logs.
+      Each data type is collected strictly to support fitness feedback and system improvement.
+      We confirm that StreakFIT does not collect unrelated personal data.
+
+      <h3>🟢 Purpose Limitation</h3>
+      User data is used only for providing fitness insights, feedback, and improving model performance.
+      Data is never sold or shared for advertising purposes.
+      There is no secondary or hidden use of user data.
+
+      <h3>🟢 Informed Consent</h3>
+      Data collection begins only after explicit user consent.
+      Users may withdraw consent at any time through app settings.
+      Core app functionality and data usage are explained before consent is requested.
+
+      <h3>🟢 Data Minimization</h3>
+      Only essential data required for functionality is collected.
+      Optional data fields are clearly marked.
+      No background or undeclared data collection occurs.
+
+      <h3>🟢 Explainable AI Disclosure</h3>
+      StreakFIT uses AI systems to generate feedback and activity labels.
+      AI decisions are explainable and users may view the contributing factors behind feedback.
+
+      <h3>🟢 Positive & Non-Harmful Label Policy</h3>
+      The system avoids harmful, shaming, or judgmental labels.
+      All feedback is supportive, contextual, and guidance-oriented.
+      Labels are not judgments of personal worth.
+
+      <h3>🟢 Context & Self-Declaration Rights</h3>
+      Users may declare context such as illness, exams, stress, or recovery.
+      Context inputs are considered during AI evaluations.
+      Users may correct incorrect system assumptions.
+
+      <h3>🟢 Right to Contest AI Decisions</h3>
+      Users can challenge AI-generated feedback or labels.
+      Re-evaluation occurs after contestation.
+      Human review is available when required.
+
+      <h3>🟢 Human-in-the-Loop Disclosure</h3>
+      Certain cases may be reviewed by authorized human reviewers.
+      Reviews follow strict privacy rules and are logged securely.
+
+      <h3>🟢 Data Security Safeguards</h3>
+      User data is encrypted in transit and at rest.
+      Access is restricted to authorized systems and personnel.
+      Security controls are regularly reviewed.
+
+      <h3>🟢 Data Retention Policy</h3>
+      Data is stored only for defined durations.
+      Older data is deleted or anonymized.
+      Users may request deletion of their data.
+
+      <h3>🟢 Anonymization for Research & Improvement</h3>
+      Any research or improvement use relies on anonymized, aggregated data only.
+      No individual profiling is performed.
+
+      <h3>🟢 No Automated Harmful Decisions</h3>
+      AI outputs are advisory and not punitive.
+      The system does not make medical, academic, or disciplinary decisions.
+      Users should not rely solely on AI for health diagnosis.
+
+      <h3>🟢 User Access & Portability</h3>
+      Users may request access to stored data.
+      Activity records can be downloaded.
+      Users may request corrections.
+
+      <h3>🟢 Opt-Out Controls</h3>
+      Users can disable specific data collection features.
+      Tracking modes can be paused at any time.
+      Opt-out options are clearly accessible within the app.
+
+    </div>
+
+    <div class="dialog-footer">
+      <button class="btn disagree" onclick="alert('You must agree to continue using StreakFIT.')">
+        Disagree
+      </button>
+      <button class="btn agree" onclick="alert('Thank you for agreeing to the Terms & Conditions.')">
+        Agree
+      </button>
+    </div>
+  </div>
+
+</body>
+</html>
