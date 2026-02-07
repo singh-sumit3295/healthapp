@@ -1,184 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>StreakFIT – Terms & Conditions</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>StreakFIT | Campus Health</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #2ecc71, #27ae60);
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+<style>
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f4f6f8;
+}
 
-    .dialog {
-      background: #ffffff;
-      width: 90%;
-      max-width: 700px;
-      border-radius: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-      display: flex;
-      flex-direction: column;
-    }
+/* ---------- TERMS OVERLAY ---------- */
+#termsOverlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #2ecc71, #27ae60);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
 
-    .dialog-header {
-      padding: 20px;
-      background: #27ae60;
-      color: white;
-      border-radius: 12px 12px 0 0;
-      text-align: center;
-    }
+#termsBox {
+  background: white;
+  width: 90%;
+  max-width: 720px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.25);
+}
 
-    .dialog-header h1 {
-      margin: 0;
-      font-size: 22px;
-    }
+#termsHeader {
+  background: #27ae60;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  border-radius: 12px 12px 0 0;
+}
 
-    .dialog-content {
-      padding: 20px;
-      height: 380px;
-      overflow-y: auto;
-      color: #333;
-      font-size: 14px;
-      line-height: 1.6;
-    }
+#termsContent {
+  padding: 20px;
+  height: 380px;
+  overflow-y: auto;
+  font-size: 14px;
+  line-height: 1.6;
+}
 
-    .dialog-content h3 {
-      color: #27ae60;
-      margin-top: 20px;
-      font-size: 16px;
-    }
+#termsContent h3 {
+  color: #27ae60;
+  margin-top: 20px;
+}
 
-    .dialog-footer {
-      padding: 15px;
-      display: flex;
-      justify-content: space-between;
-      border-top: 1px solid #ddd;
-    }
+#termsFooter {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 25px;
+  border-top: 1px solid #ddd;
+}
 
-    .btn {
-      padding: 10px 25px;
-      font-size: 14px;
-      border-radius: 6px;
-      border: none;
-      cursor: pointer;
-    }
+button {
+  padding: 10px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
 
-    .agree {
-      background: #27ae60;
-      color: white;
-    }
+.btn-agree {
+  background: #27ae60;
+  color: white;
+  font-weight: bold;
+}
 
-    .disagree {
-      background: #e74c3c;
-      color: white;
-    }
+.btn-disagree {
+  background: #e74c3c;
+  color: white;
+}
 
-    .btn:hover {
-      opacity: 0.9;
-    }
-  </style>
+/* ---------- APP UI ---------- */
+#app {
+  display: none;
+}
+
+header {
+  background: #002147;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.card {
+  background: white;
+  max-width: 420px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-top: 15px;
+}
+
+input, select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 5px;
+}
+
+.context button {
+  margin: 6px 6px 0 0;
+  background: white;
+  color: #002147;
+  border: 1px solid #002147;
+}
+
+.context button.active {
+  background: #002147;
+  color: white;
+}
+
+.primary {
+  width: 100%;
+  margin-top: 20px;
+  background: #002147;
+  color: white;
+}
+
+.result {
+  margin-top: 15px;
+}
+
+footer {
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  padding: 15px;
+}
+</style>
 </head>
 
 <body>
 
-  <div class="dialog">
-    <div class="dialog-header">
-      <h1>StreakFIT – Terms & Conditions</h1>
+<!-- ================= TERMS & CONDITIONS ================= -->
+<div id="termsOverlay">
+  <div id="termsBox">
+    <div id="termsHeader">
+      <h2>StreakFIT – Terms & Conditions</h2>
       <p>Please read carefully before continuing</p>
     </div>
 
-    <div class="dialog-content">
-
+    <div id="termsContent">
       <h3>🟢 Data Collection Transparency</h3>
-      We clearly state what data we collect, including activity data, pose data, user inputs, context flags, and usage logs.
-      Each data type is collected strictly to support fitness feedback and system improvement.
-      We confirm that StreakFIT does not collect unrelated personal data.
+      We collect activity data, pose data, user inputs, context flags, and usage logs only.
+      No unrelated personal data is collected.
 
       <h3>🟢 Purpose Limitation</h3>
-      User data is used only for providing fitness insights, feedback, and improving model performance.
-      Data is never sold or shared for advertising purposes.
-      There is no secondary or hidden use of user data.
+      Data is used only for fitness feedback and model improvement.
+      No advertising, resale, or hidden use.
 
       <h3>🟢 Informed Consent</h3>
-      Data collection begins only after explicit user consent.
-      Users may withdraw consent at any time through app settings.
-      Core app functionality and data usage are explained before consent is requested.
+      Data collection starts only after your consent.
+      You may withdraw consent at any time.
 
       <h3>🟢 Data Minimization</h3>
-      Only essential data required for functionality is collected.
-      Optional data fields are clearly marked.
-      No background or undeclared data collection occurs.
+      Only essential data is collected.
+      Optional fields are clearly marked.
 
       <h3>🟢 Explainable AI Disclosure</h3>
-      StreakFIT uses AI systems to generate feedback and activity labels.
-      AI decisions are explainable and users may view the contributing factors behind feedback.
+      AI is used for feedback and labeling.
+      You can view reasons behind AI decisions.
 
       <h3>🟢 Positive & Non-Harmful Label Policy</h3>
-      The system avoids harmful, shaming, or judgmental labels.
-      All feedback is supportive, contextual, and guidance-oriented.
-      Labels are not judgments of personal worth.
+      No shaming or judgmental labels.
+      Feedback is supportive and contextual.
 
       <h3>🟢 Context & Self-Declaration Rights</h3>
-      Users may declare context such as illness, exams, stress, or recovery.
-      Context inputs are considered during AI evaluations.
-      Users may correct incorrect system assumptions.
+      You can add context like exams, illness, stress, or recovery.
+      Context is considered in AI evaluation.
 
       <h3>🟢 Right to Contest AI Decisions</h3>
-      Users can challenge AI-generated feedback or labels.
-      Re-evaluation occurs after contestation.
-      Human review is available when required.
+      You may contest AI feedback.
+      Re-evaluation and human review are available.
 
       <h3>🟢 Human-in-the-Loop Disclosure</h3>
-      Certain cases may be reviewed by authorized human reviewers.
-      Reviews follow strict privacy rules and are logged securely.
+      Authorized reviewers may review some cases under strict privacy controls.
 
-      <h3>🟢 Data Security Safeguards</h3>
-      User data is encrypted in transit and at rest.
-      Access is restricted to authorized systems and personnel.
-      Security controls are regularly reviewed.
-
-      <h3>🟢 Data Retention Policy</h3>
-      Data is stored only for defined durations.
-      Older data is deleted or anonymized.
-      Users may request deletion of their data.
-
-      <h3>🟢 Anonymization for Research & Improvement</h3>
-      Any research or improvement use relies on anonymized, aggregated data only.
-      No individual profiling is performed.
+      <h3>🟢 Data Security & Retention</h3>
+      Data is encrypted, access-restricted, and retained only for defined durations.
 
       <h3>🟢 No Automated Harmful Decisions</h3>
-      AI outputs are advisory and not punitive.
-      The system does not make medical, academic, or disciplinary decisions.
-      Users should not rely solely on AI for health diagnosis.
+      AI outputs are advisory only and not medical or disciplinary.
 
-      <h3>🟢 User Access & Portability</h3>
-      Users may request access to stored data.
-      Activity records can be downloaded.
-      Users may request corrections.
-
-      <h3>🟢 Opt-Out Controls</h3>
-      Users can disable specific data collection features.
-      Tracking modes can be paused at any time.
-      Opt-out options are clearly accessible within the app.
-
+      <h3>🟢 User Access & Opt-Out</h3>
+      You can access, download, correct, or pause data collection at any time.
     </div>
 
-    <div class="dialog-footer">
-      <button class="btn disagree" onclick="alert('You must agree to continue using StreakFIT.')">
-        Disagree
-      </button>
-      <button class="btn agree" onclick="alert('Thank you for agreeing to the Terms & Conditions.')">
-        Agree
-      </button>
+    <div id="termsFooter">
+      <button class="btn-disagree" onclick="disagree()">Disagree</button>
+      <button class="btn-agree" onclick="agree()">Agree</button>
     </div>
   </div>
+</div>
+
+<!-- ================= MAIN APP ================= -->
+<div id="app">
+  <header>
+    <h1>Campus Health</h1>
+    <p>IIM Shillong Student Well-Being Companion</p>
+  </header>
+
+  <div class="card">
+    <h3>Daily 10-Second Check-In</h3>
+
+    <label>😴 Sleep last night (hours)</label>
+    <input type="number" id="sleep" min="0" max="12" value="6">
+
+    <label>🏃 Physical activity today</label>
+    <select id="activity">
+      <option>None</option>
+      <option selected>Light</option>
+      <option>Moderate</option>
+      <option>Intense</option>
+    </select>
+
+    <label>📌 Add context (optional)</label>
+    <div class="context">
+      <button onclick="toggleContext(this,'Exam')">Exam</button>
+      <button onclick="toggleContext(this,'Sick')">Sick</button>
+      <button onclick="toggleContext(this,'Stress')">Stress</button>
+    </div>
+
+    <button class="primary" onclick="checkStatus()">Check Status</button>
+
+    <div class="result">
+      <strong id="status"></strong>
+      <p id="explanation"></p>
+    </div>
+  </div>
+
+  <footer>
+    StreakFIT • Ethical AI-First Campus Health System
+  </footer>
+</div>
+
+<script>
+let contexts = [];
+
+function agree() {
+  document.getElementById("termsOverlay").style.display = "none";
+  document.getElementById("app").style.display = "block";
+}
+
+function disagree() {
+  alert("You must agree to the Terms & Conditions to use StreakFIT.");
+}
+
+function toggleContext(btn, value) {
+  if (contexts.includes(value)) {
+    contexts = contexts.filter(c => c !== value);
+    btn.classList.remove("active");
+  } else {
+    contexts.push(value);
+    btn.classList.add("active");
+  }
+}
+
+function checkStatus() {
+  const sleep = document.getElementById("sleep").value;
+  const activity = document.getElementById("activity").value;
+
+  let status = "On Track ✅";
+  let explanation = "Your habits look balanced today.";
+
+  if (sleep < 6 || activity === "None") {
+    status = "Lower Activity — Explanation Available";
+    explanation = `Main factors:
+• Sleep: ${sleep} hrs
+• Activity: ${activity}
+${contexts.length ? "Context: " + contexts.join(", ") : "No context added."}`;
+  }
+
+  document.getElementById("status").innerText = status;
+  document.getElementById("explanation").innerText = explanation;
+}
+</script>
 
 </body>
 </html>
